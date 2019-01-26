@@ -1,0 +1,11 @@
+<h2>Results:</h2>
+<hr>
+  <a *ngFor="let book of books"
+    routerLink="/details/{{book.id}}">
+    <div class="module book">
+      <span>{{book.title}}</span>
+      <span>{{book.availability}}</span>
+      <span>matching value goes here</span>
+    </div>
+  </a>
+

@@ -1,0 +1,18 @@
+<div *ngIf="book">
+  <h2>Edit:</h2>
+  <hr>
+  <div>{{book.title}}</div>
+  <div>{{book.author}}</div>
+  <div>{{book.publisher}}</div>
+  <div>{{book.price}}</div>
+  <div>
+    <label>Availability</label>
+    <input type="number" />
+  </div>
+  <div>
+    <label>Shipping</label>
+    <input type="text" />
+  </div>
+</div>
+<button (click)="goBack()">Back</button>
+<button (click)="saveBook()">Save</button>

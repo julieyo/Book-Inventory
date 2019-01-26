@@ -1,0 +1,11 @@
+<div *ngIf="book">
+  <h2>Details</h2>
+  <div>{{book.title}}</div>
+  <div>{{book.author}}</div>
+  <div>{{book.publisher}}</div>
+  <div>{{book.price}}</div>
+  <div>{{book.shipping}}</div>
+  <div>{{book.availability}}</div>
+</div>
+<button (click)="goBack()">Back</button>
+<button><a routerLink="/edit/{{book.id}}">Edit</a></button>
