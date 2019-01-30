@@ -1,6 +1,6 @@
 import { Book } from './book';
 
-export const BOOKS: Book[] = [
+export const books: Book[] = [
   { 
     id: 100,
     publisher: "HarperCollins",
@@ -44,6 +44,6 @@ export const BOOKS: Book[] = [
       price: 42.30,
       shipping: "1-3 Business Days",
       availability:345,
-      publisher:"McGraw-Hill",
+      publisher:"McGraw-Hill"
   }
 ];

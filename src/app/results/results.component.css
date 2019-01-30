@@ -1,0 +1,19 @@
+a {
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+}
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.result {
+    background-color: rgb(218, 240, 247);
+   padding: 1rem;
+   border-radius: .25rem;
+}

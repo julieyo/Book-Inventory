@@ -1,23 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { BookService } from '../book.service';
-import {Book} from '../book';
+import { Component, OnInit, Input } from '@angular/core';
+import {SearchResult} from '../search-result';
+
 @Component({
   selector: 'app-results-component',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  books : Book[];
+  @Input() results : SearchResult[];
 
-  constructor(private bookService: BookService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getBooks();
-  }
-  
-  getBooks() : void {
-    this.bookService.getBooks()
-      .subscribe(books => this.books = books);
-  }
 
+  }
 }

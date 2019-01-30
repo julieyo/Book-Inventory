@@ -1,11 +1,53 @@
 <div *ngIf="book">
-  <h2>Details</h2>
-  <div>{{book.title}}</div>
-  <div>{{book.author}}</div>
-  <div>{{book.publisher}}</div>
-  <div>{{book.price}}</div>
-  <div>{{book.shipping}}</div>
-  <div>{{book.availability}}</div>
+  <div class="container book">
+      <nav aria-label="breadcrumb">
+          <div class="row">
+              <div class="col col-5">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Details</li>
+              </ol>
+              </div>
+              <div class="col col-3"></div>
+              <div class="col col-1">
+                  <button class="btn btn-secondary" (click)="goBack()">Back</button>
+              </div>
+            </div>
+      </nav>
+      <hr>
+    <div class="row">
+      <div class="col col-3 strong">Title</div>
+      <div class="col col-5">{{book.title}}</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col col-3 strong">Author</div>
+        <div class="col col-5">{{book.author | arrayToString:","}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-3 strong">Publisher</div>
+      <div class="col col-5">{{book.publisher}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-3">Price</div>
+      <div class="col col-5">{{book.price | currency }}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-3">Shipping</div>
+      <div class="col col-5">{{book.shipping}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-3">Availability</div>
+      <div class="col col-5">{{book.availability}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-1">
+        <a class="btn btn-primary" routerLink="/edit/{{book.id}}">Edit</a>
+      </div>
+    </div>
+  </div>
 </div>
-<button (click)="goBack()">Back</button>
-<button><a routerLink="/edit/{{book.id}}">Edit</a></button>

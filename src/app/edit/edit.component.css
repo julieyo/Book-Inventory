@@ -1,0 +1,10 @@
+input:-webkit-autofill {
+    -webkit-transition-delay: 99999s;
+    transition-delay: 99999s;
+  }
+.book {
+    font-size: 1.5rem;
+}
+.btn.btn-secondary {
+  margin: 0.75rem;
+}

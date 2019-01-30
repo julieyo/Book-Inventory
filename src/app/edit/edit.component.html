@@ -1,18 +1,66 @@
 <div *ngIf="book">
-  <h2>Edit:</h2>
-  <hr>
-  <div>{{book.title}}</div>
-  <div>{{book.author}}</div>
-  <div>{{book.publisher}}</div>
-  <div>{{book.price}}</div>
-  <div>
-    <label>Availability</label>
-    <input type="number" />
-  </div>
-  <div>
-    <label>Shipping</label>
-    <input type="text" />
+  <div class="container book">
+    <nav aria-label="breadcrumb">
+      <div class="row">
+        <div class="col col-5">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" aria-current="page">Details</li>
+          <li class="breadcrumb-item active" aria-current="page">Edit</li>
+        </ol>
+        </div>
+        <div class="col col-3"></div>
+        <div class="col col-1">
+            <button class="btn btn-secondary" (click)="goBack()">Back</button>
+        </div>
+      </div>
+    </nav>
+    
+    <hr>
+    <div class="row">
+      <div class="col col-3">Title</div>
+      <div class="col col-5">{{book.title}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-3">Author</div>
+      <div class="col col-5">{{book.author | arrayToString:","}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-3">Publisher</div>
+      <div class="col col-5">{{book.publisher}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-3">Price</div>
+      <div class="col col-5">{{book.price | currency}}</div>
+    </div>
+    <hr>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <div class="col col-3">
+          <label for="availability">Availability </label>
+        </div>
+        <div class="col col-5">
+          <input id="availability" class="form-control" type="number" formControlName="availability" value="{{book.availability}}" autocomplete="off" />
+        </div>
+      </div>
+      <hr>
+      <div class="form-group row">
+        <div class="col col-3">
+          <label for="shipping">Shipping </label>
+        </div>
+        <div class="col col-5">
+          <input id="shipping" class="form-control" type="text" formControlName="shipping" value="{{book.shipping}}" autocomplete="off" />
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" *ngIf="editForm.touched || editForm.dirty" type="submit" >Save</button>
+      </div>
+      </div>
+    </form>
   </div>
 </div>
-<button (click)="goBack()">Back</button>
-<button (click)="saveBook()">Save</button>
+

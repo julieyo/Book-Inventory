@@ -1,0 +1,18 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Alert</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>There are unsaved changes. Do you want to save before you leave the page?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Yes click')">Yes</button>
+      <button type="button" class="btn btn-outline-dark" (click)="c('No click')">No</button>
+      <button type="button" class="btn btn-outline-dark" (click)="c('Cancel click')">Cancel</button>
+    
+    </div>
+  </ng-template>
+  

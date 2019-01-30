@@ -1,2 +1,15 @@
-<h2>Find a book: </h2>
-<input type="text" />
+<div class="search">
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Search</li>
+        </ol>
+    </nav>
+<h2>Find a book </h2>
+<input [formControl]="searchField" type="text" />
+<hr>
+</div>
+<div class="container">
+<app-results-component [results]="results"></app-results-component>
+</div>
+</div>
